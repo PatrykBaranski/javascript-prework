@@ -9,12 +9,16 @@ const clearMessages = () => {
 };
 const changeNumberToMove = (number) => {
   let move = "nieznany ruch";
-  if (number === 1) {
-    move = "kamien";
-  } else if (number === 2) {
-    move = "papier";
-  } else if (number === 3) {
-    move = "nozyce";
+  switch (number) {
+    case 1:
+      move = "kamien";
+      break;
+    case 2:
+      move = "papier";
+      break;
+    case 3:
+      move = "nozyce";
+      break;
   }
   return move;
 };

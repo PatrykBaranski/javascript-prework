@@ -12,13 +12,13 @@
     printMessage(`Twoj ruch to: ${playerMove}`);
     displayResults(computerMove, playerMove);
   };
-  rockBtn.addEventListener("click", () => {
-    playGame(1);
-  });
-  paperBtn.addEventListener("click", () => {
-    playGame(2);
-  });
-  scissorsBtn.addEventListener("click", () => {
-    playGame(3);
-  });
+  const playGameCallback = (number) => {
+    return () => {
+      playGame(number);
+    };
+  };
+
+  rockBtn.addEventListener("click", playGameCallback(1));
+  paperBtn.addEventListener("click", playGameCallback(2));
+  scissorsBtn.addEventListener("click", playGameCallback(3));
 }
